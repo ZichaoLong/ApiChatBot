@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      // ==========================================
+      // 核心配置（推荐所有用户启用）
+      // ==========================================
+
+      // Python 命令执行（用于查询 site-packages 路径等）
+      "Bash(python -c:*)",
+      "Bash(python3 -c:*)",
+
+      // 代码搜索工具
+      "Grep",
+      "Glob",
+
+      // SDK 源码读取权限（需要替换 <PYTHON_SITE_PACKAGES> 为实际路径）
+      "Read(<PYTHON_SITE_PACKAGES>/openai/**)",
+      "Read(<PYTHON_SITE_PACKAGES>/anthropic/**)",
+      "Read(<PYTHON_SITE_PACKAGES>/google/genai/**)",
+
+      // ==========================================
+      // 可选配置（根据个人偏好和工作流程）
+      // ==========================================
+
+      // Web 搜索
+      "WebSearch",
+
+      // 基础 Bash 命令（文件查找和内容查看）
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+
+      // Git 命令（代码版本管理）
+      "Bash(git status)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
